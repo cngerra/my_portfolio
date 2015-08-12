@@ -1,0 +1,287 @@
+/*
+Theme Name: Christopher Gerra Portfolio
+Theme URI: http://christophergerra.com
+Author: Christopher Gerra
+Version: 1.0
+*/
+
+@import url('css/fonts.css');
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section {display: block;}
+
+audio,canvas,video {display: inline-block;max-width: 100%;}
+
+html {
+	overflow-y: scroll;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+body, button, input, select, textarea {
+	color: #727272;
+	font-family: 'latolight', verdana, arial, sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.5;
+}
+body{
+	background-color: #f0f0f0;
+	color: #727272; 
+	font-family: 'latolight';
+	font-size: 14px;
+}
+a{color: #898888}
+a:hover, a:focus{color: #898888; text-decoration: underline;}
+p{margin-bottom: 15px}
+
+/*Header*/
+#container{background: #fff;}
+
+header{
+	clear: both;
+	float: left;
+	padding: 35px 0 0;
+	width: 100%
+}
+.header_inner{background: #fff;}
+.logo_wrapper{float: left; text-align: center; width: 100%}
+.logo_wrapper img{display: inline;}
+
+/*Nav*/
+.homepage_menu{
+	clear: both;
+	margin-top: 20px;
+}
+.home_menu li a{
+	color: #727272;
+	display: inline-block;
+	font-family: 'latolight';
+	font-size: 24px;
+	margin-bottom: 15px;
+	outline: none;
+	text-transform: uppercase;
+}
+.home_menu li a i{
+	color: #000;
+	font-size: 26px;
+	font-weight: bold;
+}
+.home_menu li a:hover i{
+	color: #fc2856;
+}
+
+
+/*Content*/
+.homepage_content{
+	clear: both;
+	padding-bottom: 50px;
+	padding-top: 50px;
+}
+.homepage_image img{max-width: 80%}
+.myname{
+	color: #434342;
+	font-family: 'ITCAvantGardePro-Bk';
+	font-size: 25px;
+	padding-bottom: 30px;
+	padding-top: 30px;
+	text-transform: uppercase;
+}
+.myname span{color: #fc2856;}
+.homepage_intro{
+	padding: 0 15px 30px;
+}
+section{clear: both;}
+.pages{clear: both;}
+.pages img{display: inline;}
+.about, .contact{
+	padding: 160px 0 125px;
+}
+.works{
+	background: #fc2856; 
+	margin-top: 0;
+	padding: 220px 0 125px;
+}
+.about{
+	margin-top: -120px; 
+	padding-top: 240px; 
+	position: relative; 
+	z-index: 98;
+}
+.contact{
+	margin-top: -280px; 
+	padding-top: 230px; 
+	position: relative; 
+	z-index: 97;
+}
+.works h2, .about h2, .contact h2{
+	color: #88898c;
+	font-family:"Lato Regular";
+	font-size: 27px;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+}
+.works h2{color: #fff}
+.my_image, .about_details{margin-bottom: 20px; padding-left: 0; padding-right: 0;}
+.social-icons{margin-top: 20px; padding-left: 0; padding-right: 0}
+.social-icons p{color: #888; font-size: 21px; margin-top: 10px}
+.social-icons a{color: #fc2856;}
+.contact-form{padding-left: 0; padding-right: 0;}
+.inner{display: none;}
+
+/*Footer*/
+footer{
+	color: #898888; 
+	padding: 25px 0;
+	text-align: center;
+}
+
+/*Bootstrap*/
+.navbar-fixed-top{z-index: 100}
+.navbar{margin-bottom: 0; margin-top: 30px}
+.navbar-default{
+	background-color: #f0f0f0;
+	border: 0;
+	border-radius: 0;
+}
+.navbar-toggle{
+	border-radius: 0;
+	margin-top: 3px;
+	padding: 9px 10px 9px 155px; 
+}
+.navbar-default .navbar-toggle{
+	border: 0;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus{
+	background-color: transparent;
+}
+.navbar-default .navbar-toggle .caret{
+	border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 9px dashed;
+}
+.navbar-nav{
+	margin-bottom: 0;
+	margin-top: 0;
+}
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-brand{
+	color: #727272;
+	display: inline-block;
+	font-family: 'latolight';
+	font-size: 18px;
+	text-transform: uppercase;
+}
+.navbar-default .navbar-nav > li > a{width: 100%}
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:focus, 
+.navbar-default .navbar-nav > .active > a:hover{
+	color: #727272;
+}
+.nav > li{
+	border-bottom: #e7e7e7 1px solid;
+	border-top: #f6f6f6 1px solid;
+}
+
+/*Plugin*/
+.wl-gallery{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media only screen and (min-width : 320px){
+
+}
+
+@media only screen and (min-width : 480px){
+	.homepage_intro{padding: 0 50px 30px;}
+	.myname{font-size: 40px;}
+}
+
+@media only screen and (min-width : 768px){
+	header{padding-bottom: 35px}
+
+	.logo_wrapper{width: 50%}
+	.header_inner{padding-top: 60px; padding-bottom: 10px;}
+	.header_inner .logo_wrapper{padding-left: 15px; text-align: left;}
+	.navbar{margin-bottom: 20px; margin-top: 0;}
+	.navbar-default{background-color: transparent;}
+	.nav > li{border-bottom: 0; border-top: 0; margin-left: 7px;}
+	.nav > li:first-child{margin-left: 0}
+	.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, 
+	.navbar-default .navbar-nav > .active > a:hover{background-color: transparent;}
+	.homepage_image img{max-width: 100%}
+	.myname{font-size: 50px; padding-bottom: 0}
+	.homepage_intro{
+		float: none;
+	    margin: 0 auto 60px;
+	    padding: 0 18px;
+	    width: 460px;
+	}
+	.homepage_menu{margin-bottom: 100px;}
+	.home_menu li{display: inline-block; margin-left: 80px}
+	.home_menu li:first-child{margin-left: 0}
+	.home_menu li a{margin-bottom: 0}
+	.my_image{padding-right: 15px;}
+	.works h2, .about h2, .contact h2{font-size: 37px}
+	.my_image, .about_details{margin-top: 40px;}
+	.contact-form{margin-top: -80px;}
+	.nav_logo_wrapper{
+		background-color: rgba(255, 255, 255, 1);
+		box-shadow: 0 0 5px -2px #000;
+	    left: 0;
+	    max-height: 150px;
+	    min-height: 150px;
+	    position: fixed;
+	    top: 0;
+	    transition: all 300ms ease 0s;
+	    width: 100%;
+	    z-index: 100;
+	}
+	.works{margin-top: 60px; padding: 220px 0 125px;}
+	.about{margin-top: -120px; padding-top: 240px;}
+	.contact{margin-top: -280px; padding-top: 230px;}
+}
+
+@media only screen and (min-width : 992px){
+	.myname{font-size: 70px;}
+	.logo_wrapper{text-align: left;}
+	.homepage_menu{margin-bottom: 220px; margin-top: 40px}
+	.home_menu li{margin-left: 130px;}
+	.navbar-default{float: right; padding-left: 0; padding-right: 0;}
+	.nav > li{margin-left: 35px;}
+	.pages{padding-left: 0; padding-right: 0}
+	.about, .contact{padding: 125px 0;}
+	.header_inner .logo_wrapper{padding-left: 0;}
+	.gal-container{margin-top: 80px;}
+	.works{margin-top: 60px; padding: 220px 0 125px;}
+	.about{margin-top: -120px; padding-top: 240px;}
+	.contact{margin-top: -280px; padding-top: 230px;}
+
+	footer{text-align: left;}
+}
+
+@media only screen and (min-width : 1200px){	
+	.nav > li{margin-left: 78px;}
+}
+
+@media only screen and (min-width : 1280px){
+
+}
+
+@media only screen and (min-width : 1600px){
+	.container{width: 1366px;}
+	.nav > li{margin-left: 119px;}
+}
