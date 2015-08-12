@@ -54,7 +54,7 @@ function x2fair_load_settings_page() {
 		$url_parameters = isset($_GET['tab'])? 'updated=true&tab='.$_GET['tab'] : 'updated=true';
 		wp_redirect(admin_url('themes.php?page=theme-settings&'.$url_parameters));
 		exit;
-	}
+	}  
 }
 
 function x2fair_save_theme_settings() {
