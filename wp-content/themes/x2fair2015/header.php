@@ -16,10 +16,10 @@
 
 		?>
 	</title>
-	<?php $x2fair_options = get_option('theme_christopher_options'); ?>
+	<?php $x2fair_options = get_option('x2fair_theme_settings'); ?>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<link rel="shortcut icon" href="<?php echo $x2fair_options['favicon']; ?>" />
+	<link rel="shortcut icon" href="<?php echo $x2fair_options['x2fair_favicon']; ?>" />
 	<!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->

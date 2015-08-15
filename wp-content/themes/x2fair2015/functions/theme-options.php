@@ -13,6 +13,8 @@ function x2fair_admin_init() {
 		$settings = array(
 			'x2fair_intro' 			=> 'Some intro text for the home page',
 			'x2fair_favicon'		=> false,
+			'x2fair_logo'			=> false,
+			'x2fair_homepage_image'	=> false,
 			'x2fair_fb_url' 		=> false,
 			'x2fair_twitter_url' 	=> false,
 			'x2fair_gplus_url'		=> false,
@@ -41,7 +43,7 @@ function replace_thickbox_text($translated_text, $text ) {
 	if ( 'Insert into Post' == $text ) {
 		$referer = strpos( wp_get_referer(), 'theme-settings' );
 		if ( $referer != '' ) {
-			return __('I want this to be my logo!', 'my_themes' );
+			return __('Use this Image', 'my_themes' );
 		}
 	}
 	return $translated_text;
@@ -54,7 +56,7 @@ function x2fair_load_settings_page() {
 		$url_parameters = isset($_GET['tab'])? 'updated=true&tab='.$_GET['tab'] : 'updated=true';
 		wp_redirect(admin_url('themes.php?page=theme-settings&'.$url_parameters));
 		exit;
-	}  
+	}
 }
 
 function x2fair_save_theme_settings() {
@@ -69,10 +71,10 @@ function x2fair_save_theme_settings() {
 
 	    switch ( $tab ){
 			case 'homepage' : 
-				$settings['x2fair_intro']	  = $_POST['x2fair_intro'];
-				$settings['x2fair_favicon']	  = $_POST['x2fair_favicon'];				
-				$settings['x2fair_logo']	  = $_POST['x2fair_logo'];
-				$settings['x2fair_big_image'] = $_POST['x2fair_big_image'];
+				$settings['x2fair_intro']	  		= $_POST['x2fair_intro'];
+				$settings['x2fair_favicon']	  		= $_POST['x2fair_favicon'];				
+				$settings['x2fair_logo']	  		= $_POST['x2fair_logo'];
+				$settings['x2fair_homepage_image'] 	= $_POST['x2fair_homepage_image'];
 			break;
 	        case 'social_media' :
 				$settings['x2fair_fb_url']	  	= $_POST['x2fair_fb_url'];
@@ -180,9 +182,9 @@ function x2fair_settings_page() {
 								</td>
 							</tr>
 							<tr>
-								<th><label for="x2fair_intro">Favicon:</label></th>
+								<th><label for="x2fair_favicon">Favicon:</label></th>
 								<td>
-									<input type="text" id="favicon_url" name="x2fair_favicon" value="<?php echo esc_html( stripslashes( $settings["x2fair_favicon"] ) ); ?>" />
+									<input type="hidden" id="favicon_url" name="x2fair_favicon" value="<?php echo esc_html( stripslashes( $settings["x2fair_favicon"] ) ); ?>" />
 									<div id="upload_favicon_preview" style="margin-bottom: 10px;">
 										<img style="max-width:100%;" src="<?php echo esc_url( $settings['x2fair_favicon'] ); ?>" />
 									</div>
@@ -191,21 +193,38 @@ function x2fair_settings_page() {
 										<input id="delete_favicon_button" name="x2fair_theme_settings[delete_favicon]" type="submit" class="button" value="<?php _e( 'Delete Favicon', 'christopher' ); ?>" />
 									<?php endif; ?>	
 									<br />
-									<span class="description">Upload favicon</span>
+									<span class="description">Upload favicon</label></span>
 								</td>
 							</tr>
 							<tr>
-								<th><label for="x2fair_intro">Logo:</label></th>
+								<th><label for="x2fair_intro">Theme Logo: </th>
 								<td>
-									<textarea id="x2fair_intro" name="x2fair_intro" cols="60" rows="5" ><?php echo esc_html( stripslashes( $settings["x2fair_intro"] ) ); ?></textarea><br/>
-									<span class="description">Enter the introductory text for the home page:</span>
+									<input type="hidden" id="logo_url" name="x2fair_logo" value="<?php echo esc_html( stripslashes( $settings["x2fair_logo"] ) ); ?>" />
+									<div id="upload_logo_preview" style="margin-bottom: 10px;">
+										<img style="max-width:100%;" src="<?php echo esc_url( $settings['x2fair_logo'] ); ?>" />
+									</div>
+									<input id="upload_logo_button" type="button" class="button" value="<?php _e( 'Upload Logo', 'my_themes' ); ?>" />
+									<?php if ( '' != $settings['x2fair_logo'] ): ?>
+										<input id="delete_logo_button" name="x2fair_theme_settings[delete_logo]" type="submit" class="button" value="<?php _e( 'Delete Logo', 'christopher' ); ?>" />
+									<?php endif; ?>		
+									<br />
+									<span class="description">Upload logo</label></span>	
 								</td>
 							</tr>
+
 							<tr>
 								<th><label for="x2fair_intro">Homepage Image:</label></th>
 								<td>
-									<textarea id="x2fair_intro" name="x2fair_intro" cols="60" rows="5" ><?php echo esc_html( stripslashes( $settings["x2fair_intro"] ) ); ?></textarea><br/>
-									<span class="description">Enter the introductory text for the home page:</span>
+									<input type="hidden" id="homepage_image_url" name="x2fair_homepage_image" value="<?php echo esc_html( stripslashes( $settings["x2fair_homepage_image"] ) ); ?>" />
+									<div id="upload_homeimage_preview" style="margin-bottom: 10px;">
+										<img style="max-width:100%;" src="<?php echo esc_url( $settings['x2fair_homepage_image'] ); ?>" />
+									</div>
+									<input id="upload_homeimage_button" type="button" class="button" value="<?php _e( 'Upload Logo', 'my_themes' ); ?>" />
+									<?php if ( '' != $settings['x2fair_homepage_image'] ): ?>
+										<input id="delete_homeimage_button" name="x2fair_theme_settings[delete_home_image]" type="submit" class="button" value="<?php _e( 'Delete Homepage Image', 'christopher' ); ?>" />
+									<?php endif; ?>		
+									<br />
+									<span class="description">Upload homepage image</label></span>	
 								</td>
 							</tr>
 							<?php

@@ -15,9 +15,9 @@ get_header(); ?>
 	<div class="container"> 
 		<div class="row">
 			<div class="logo_wrapper">
-		        <?php if ( $x2fair_options['logo'] != '' ): ?>
+		        <?php if ( $x2fair_options['x2fair_logo'] != '' ): ?>
 		            <a href='<?php echo esc_url( home_url( '/' ) ); ?>' rel='home' class="logo">
-		                <img src="<?php echo $x2fair_options['logo']; ?>" />
+		                <img src="<?php echo $x2fair_options['x2fair_logo']; ?>" />
 		            </a>
 		        <?php  else: ?>
 		        	<a href='<?php echo esc_url( home_url( '/' ) ); ?>' rel='home'><?php bloginfo( 'name' ); ?></a>
@@ -28,9 +28,9 @@ get_header(); ?>
 </header>
 <section class="container homepage_content text-center">
 	<div class="row">
-	    <?php if ( $x2fair_options['homepage_image'] != '' ): ?>
+	    <?php if ( $x2fair_options['x2fair_homepage_image'] != '' ): ?>
 	        <div class="homepage_image">
-	            <img src="<?php echo $x2fair_options['homepage_image']; ?>" />
+	            <img src="<?php echo $x2fair_options['x2fair_homepage_image']; ?>" />
 	        </div>
 	    <?php  endif; ?>
 	    <div class="myname">

@@ -363,7 +363,7 @@ function add_active_class($classes, $item) {
 }
 
 function register_scripts_css(){	
-	wp_enqueue_script( 'jquery-script', get_template_directory_uri() . '/js/jquery-1.11.1.min.js', array(), '1', 'all' );
+	//wp_enqueue_script( 'jquery-script', get_template_directory_uri() . '/js/jquery-1.11.1.min.js', array(), '1', 'all' );
 	wp_enqueue_script( 'bootstrap-script', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '1', 'all' );
 	wp_enqueue_script( 'vanmochi-script', get_template_directory_uri() . '/js/x2fair.js', array(), '1', 'all' );
 	wp_enqueue_style( 'bootstrap-style', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '1', 'all' );
