@@ -65,13 +65,18 @@ header{
 	margin-top: 20px;
 }
 .home_menu li a{
-	color: #727272;
+	color: #000;
 	display: inline-block;
 	font-family: 'latolight';
 	font-size: 24px;
 	margin-bottom: 15px;
 	outline: none;
 	text-transform: uppercase;
+	transition: all 300ms ease 0s;
+}
+.home_menu li a:hover, .home_menu li a:focus{
+	color: #fc2856;
+	text-decoration: none;
 }
 .home_menu li a i{
 	color: #000;
@@ -266,7 +271,7 @@ footer{
 	.about, .contact{padding: 125px 0;}
 	.header_inner .logo_wrapper{padding-left: 0;}
 	.gal-container{margin-top: 80px;}
-	.works{margin-top: 60px; padding: 220px 0 125px;}
+	.works{margin-top: 60px; padding: 200px 0 125px;}
 	.about{margin-top: -120px; padding-top: 240px;}
 	.contact{margin-top: -280px; padding-top: 230px;}
 
