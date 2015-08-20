@@ -18,7 +18,13 @@ function x2fair_admin_init() {
 			'x2fair_fb_url' 		=> false,
 			'x2fair_twitter_url' 	=> false,
 			'x2fair_gplus_url'		=> false,
-			'x2fair_ga' 			=> false
+			'x2fair_ga' 			=> false,
+			'html'					=> false,
+			'css'					=> false,
+			'php'					=> false,
+			'jquery'				=> false,
+			'boostrap'				=> false,
+			'wordpress'				=> false
 		);
 		add_option( "x2fair_theme_settings", $settings, '', 'yes' );
 	}	
@@ -82,6 +88,14 @@ function x2fair_save_theme_settings() {
 				$settings['x2fair_gplus_url']	= $_POST['x2fair_gplus_url'];
 				$settings['x2fair_linkedin_url']= $_POST['x2fair_linkedin_url'];
 			break; 
+			case 'skills' :
+				$settings['html']		= $_POST['html'];
+				$settings['css']		= $_POST['css'];
+				$settings['php']		= $_POST['php'];
+				$settings['jquery']		= $_POST['jquery'];
+				$settings['boostrap']	= $_POST['boostrap'];
+				$settings['wordpress']	= $_POST['wordpress'];
+			break;
 	        case 'footer' : 
 				$settings['x2fair_ga']  = $_POST['x2fair_ga'];
 			break;
@@ -99,7 +113,7 @@ function x2fair_save_theme_settings() {
 }
 
 function x2fair_admin_tabs( $current = 'homepage' ) { 
-    $tabs = array( 'homepage' => 'Homepage', 'social_media' => 'Social Media', 'footer' => 'Footer' ); 
+    $tabs = array( 'homepage' => 'Homepage', 'social_media' => 'Social Media','skills' => 'My Skills', 'footer' => 'Footer' ); 
     $links = array();
     echo '<div id="icon-themes" class="icon32"><br></div>';
     echo '<h2 class="nav-tab-wrapper">';
@@ -261,6 +275,52 @@ function x2fair_settings_page() {
 							</tr>
 							<?php
 						break; 
+						case 'skills' : 
+							?>							
+							<tr>
+								<th><label>HTML:</label></th>
+								<td>
+									<input id="html" name="html" type="text" value="<?php echo esc_html( stripslashes( $settings["html"] ) ); ?>" style="text-align:center; width:40px" /> 
+									<span class="description">%</span>
+								</td>
+							</tr>
+							<tr>
+								<th><label>CSS:</label></th>
+								<td>
+									<input id="css" name="css" type="text" value="<?php echo esc_html( stripslashes( $settings["css"] ) ); ?>" style="text-align:center; width:40px" /> 
+									<span class="description">%</span>
+								</td>
+							</tr>
+							<tr>
+								<th><label>PHP:</label></th>
+								<td>
+									<input id="php" name="php" type="text" value="<?php echo esc_html( stripslashes( $settings["php"] ) ); ?>" style="text-align:center; width:40px" /> 
+									<span class="description">%</span>
+								</td>
+							</tr>
+							<tr>
+								<th><label>JQUERY:</label></th>
+								<td>
+									<input id="jquery" name="jquery" type="text" value="<?php echo esc_html( stripslashes( $settings["jquery"] ) ); ?>" style="text-align:center; width:40px" /> 
+									<span class="description">%</span>
+								</td>
+							</tr>
+							<tr>
+								<th><label>BOOTSTRAP:</label></th>
+								<td>
+									<input id="boostrap" name="boostrap" type="text" value="<?php echo esc_html( stripslashes( $settings["boostrap"] ) ); ?>" style="text-align:center; width:40px" />
+									<span class="description">%</span>
+								</td>
+							</tr>
+							<tr>
+								<th><label>WORDPRESS:</label></th>
+								<td>
+									<input id="wordpress" name="wordpress" type="text" value="<?php echo esc_html( stripslashes( $settings["wordpress"] ) ); ?>" style="text-align:center; width:40px" /> 
+									<span class="description">%</span>
+								</td>
+							</tr>
+							<?php
+						break;
 						case 'footer' : 
 							?>
 							<tr>
@@ -287,5 +347,51 @@ function x2fair_settings_page() {
 <?php
 }
 
+function shortcodeskills(){
+	$settings = get_option( "x2fair_theme_settings" );	
+	
+	$html		= $settings["html"];
+	$css		= $settings["css"];
+	$php		= $settings["php"];
+	$jquery		= $settings["jquery"];
+	$boostrap	= $settings["boostrap"];
+	$wordpress	= $settings["wordpress"];
+
+	$dimension 	= "180";
+	$fontsize 	= "20";
+	$fgcolor 	= "#fc2856";
+	$bgcolor 	= "#eee";
+
+	//return "et";
+	//return $html;
+	return '
+		<div class="col-xs-12 my_skills">
+			<div class="row">
+				<div class="col-xs-12 col-sm-4 col-md-2">
+					<div id="php" data-dimension="'.$dimension.'" data-text="'.$php."%".'" data-info="PHP" data-width="15" data-fontsize="'.$fontsize.'" data-percent="'.$php.'" data-fgcolor="'.$fgcolor.'" data-bgcolor="'.$bgcolor.'"></div>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-2">
+					<div id="html" data-dimension="'.$dimension.'" data-text="'.$html."%".'" data-info="HTML" data-width="15" data-fontsize="'.$fontsize.'" data-percent="'.$html.'" data-fgcolor="'.$fgcolor.'" data-bgcolor="'.$bgcolor.'"></div>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-2">
+					<div id="jquery" data-dimension="'.$dimension.'" data-text="'.$jquery."%".'" data-info="JQUERY" data-width="15" data-fontsize="'.$fontsize.'" data-percent="'.$jquery.'" data-fgcolor="'.$fgcolor.'" data-bgcolor="'.$bgcolor.'"></div>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-2">
+					<div id="wordpress" data-dimension="'.$dimension.'" data-text="'.$wordpress."%".'" data-info="WORDPRESS" data-width="15" data-fontsize="'.$fontsize.'" data-percent="'.$wordpress.'" data-fgcolor="'.$fgcolor.'" data-bgcolor="'.$bgcolor.'"></div>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-2">
+					<div id="css" data-dimension="'.$dimension.'" data-text="'.$css."%".'" data-info="CSS" data-width="15" data-fontsize="'.$fontsize.'" data-percent="'.$css.'" data-fgcolor="'.$fgcolor.'" data-bgcolor="'.$bgcolor.'"></div>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-2">
+					<div id="boostrap" data-dimension="'.$dimension.'" data-text="'.$boostrap."%".'" data-info="BOOTSTRAP" data-width="15" data-fontsize="'.$fontsize.'" data-percent="'.$boostrap.'" data-fgcolor="'.$fgcolor.'" data-bgcolor="'.$bgcolor.'"></div>
+				</div>
+			</div>
+		</div>
+	';
+
+
+			
+}
+add_shortcode('x2fairskills', 'shortcodeskills')
 
 ?>

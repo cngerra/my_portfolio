@@ -56,6 +56,11 @@ get_header(); ?>
 						<i class="fa fa-envelope"></i> Contact
 					</a>
 				</li>
+				<!-- <li class="menu-item" id="menu-item">
+		    		<a href="http://localhost/x2fair.com/works">
+		    			<i class="fa fa-arrow-right"></i> Enter My Website
+		    		</a>
+		    	</li> -->
 			</ul>
 		</div>
 	</div>

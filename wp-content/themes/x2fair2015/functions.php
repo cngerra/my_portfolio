@@ -362,12 +362,14 @@ function add_active_class($classes, $item) {
   return $classes;
 }
 
-function register_scripts_css(){	
-	//wp_enqueue_script( 'jquery-script', get_template_directory_uri() . '/js/jquery-1.11.1.min.js', array(), '1', 'all' );
+function register_scripts_css(){
 	wp_enqueue_script( 'bootstrap-script', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '1', 'all' );
 	wp_enqueue_script( 'vanmochi-script', get_template_directory_uri() . '/js/x2fair.js', array(), '1', 'all' );
+	wp_enqueue_script( 'viewportchecker', get_template_directory_uri() . '/js/jquery.viewportchecker.js', array(), '1', 'all' );
+	wp_enqueue_script( 'circliful-js', get_template_directory_uri() . '/js/jquery.circliful.min.js', array(), '1', 'all' );
 	wp_enqueue_style( 'bootstrap-style', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '1', 'all' );
 	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css', array(), '1', 'all' );
+	wp_enqueue_style( 'circliful', get_template_directory_uri() . '/css/jquery.circliful.css', array(), '1', 'all' );
 	wp_enqueue_style( 'fontawesome-style', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
 }
 add_action('wp_enqueue_scripts', 'register_scripts_css');

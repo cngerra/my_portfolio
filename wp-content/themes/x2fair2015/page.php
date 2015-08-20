@@ -73,7 +73,7 @@ foreach ($pages as $page_data) {
 	$title		= $page_data->post_title;
 	$slug		= $page_data->post_name;
 ?>
-<section id="<?php echo $slug;?>" class="<?php echo $slug; ?>">			
+<section id="<?php echo $slug;?>" class="<?php echo $slug; ?> post">			
 	<div class="container pages">
 		<h2 class="title"><?php echo $title; ?></h2>
 		<?php echo $content; ?>

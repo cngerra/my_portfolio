@@ -40,6 +40,8 @@ jQuery(document).ready(function() {
     fixedbsmenu();
     fixedbsmenu767();
 
+
+
     jQuery('a[href*=#]:not([href=#])').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
           var target = jQuery(this.hash);
@@ -50,6 +52,13 @@ jQuery(document).ready(function() {
           }
         }
     });
+
+    jQuery('.post').addClass('hiddenAnimation').viewportChecker({
+        classToAdd: 'visibleAnimation animated fadeIn',
+        offset: 400
+    });
+    
+    jQuery('#html, #css, #php, #jquery, #boostrap, #wordpress').circliful();
 
 });
 
