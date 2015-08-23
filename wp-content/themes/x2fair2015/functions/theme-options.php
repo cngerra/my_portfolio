@@ -326,7 +326,7 @@ function x2fair_settings_page() {
 							<tr>
 								<th><label for="x2fair_ga">Google Analytics:</label></th>
 								<td>
-									<textarea id="x2fair_ga" name="x2fair_ga" cols="60" rows="5"><?php echo esc_html( stripslashes( $settings["x2fair_ga"] ) ); ?></textarea><br/>
+									<input id="x2fair_ga" name="x2fair_ga" type="text" value="<?php echo esc_html( stripslashes( $settings["x2fair_ga"] ) ); ?>" /><br/>
 									<span class="description">Enter your Google Analytics tracking code:</span>
 								</td>
 							</tr>
@@ -360,7 +360,7 @@ function shortcodeskills(){
 	$dimension 	= "180";
 	$fontsize 	= "20";
 	$fgcolor 	= "#fc2856";
-	$bgcolor 	= "#eee";
+	$bgcolor 	= "#c8cfb4";
 
 	//return "et";
 	//return $html;

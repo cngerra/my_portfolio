@@ -26,7 +26,7 @@
 	<?php wp_head(); ?>
 	<!-- Google Analytics Tracking Code Begins- DO NOT remove --> 
     <script type="text/javascript"> 
-    	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www."); document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E")); </script> <script type="text/javascript"> try { var pageTracker = _gat._getTracker("<?php echo $options['googleanalytics'] ?>"); pageTracker._trackPageview(); } catch(err) {}
+    	// var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www."); document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E")); </script> <script type="text/javascript"> try { var pageTracker = _gat._getTracker("<?php echo $x2fair_options['x2fair_ga'] ?>"); pageTracker._trackPageview(); } catch(err) {}
     </script>
     <!-- Google Analytics Tracking Code ends- DO NOT remove -->  
     <link rel='stylesheet' href='<?php echo get_template_directory_uri(); ?>/css/animate.min.css' type='text/css' media='all' />

@@ -31,7 +31,7 @@ $paramssld["ht_view2_element_linkbutton_color"] = "ffffff";
 $paramssld["ht_view2_element_linkbutton_font_size"] = "14";
 $paramssld["ht_view2_element_linkbutton_background_color"] = "2ea2cd";
 $paramssld["ht_view2_show_popup_linkbutton"] = "on";
-$paramssld["ht_view2_popup_linkbutton_text"] = "View More";
+$paramssld["ht_view2_popup_linkbutton_text"] = "Visit Website";
 $paramssld["ht_view2_popup_linkbutton_background_hover_color"] = "0074a2";
 $paramssld["ht_view2_popup_linkbutton_background_color"] = "2ea2cd";
 $paramssld["ht_view2_popup_linkbutton_font_hover_color"] = "ffffff";
@@ -648,8 +648,9 @@ jQuery(document).ready(function(){
 .element_<?php echo $galleryID; ?> {
 	/*width:100%;
 	max-width:<?php echo $paramssld['ht_view2_element_width']; ?>px;*/
-	height:<?php echo $paramssld['ht_view2_element_height']+45; ?>px;
-	margin:0px 0px 50px;
+	/*height:<?php echo $paramssld['ht_view2_element_height']+45; ?>px;*/
+	height: 300px;
+	margin: 0;
 	/*background:#<?php echo $paramssld['ht_view2_element_background_color']; ?>;
 	border:<?php echo $paramssld['ht_view2_element_border_width']; ?>px solid #<?php echo $paramssld['ht_view2_element_border_color']; ?>;*/
 	background: 0;
@@ -665,26 +666,51 @@ jQuery(document).ready(function(){
 	display: block;
     height: 100%;
     position: relative;
+    text-align: center;
     width: 100%;
 }
 
 .element_<?php echo $galleryID; ?> .image-block_<?php echo $galleryID; ?> img {
-	/*width:100% !important;
-	max-width:<?php echo $paramssld['ht_view2_element_width']; ?>px !important;
-	height:<?php echo $paramssld['ht_view2_element_height']; ?>px !important;*/
-	border-radius: 0 !important;
-    bottom: 0;
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
-    display: inline;
-    left: 0;
+	border-radius: 0;
+	display: inline;
     margin: auto;
-    max-height: 200px;
-    max-width: 200px !important;
-    position: absolute;
-    right: 0;
-    top: 0;
+    max-height: 300px;
+    max-width: 300px !important;
+    position: relative;
     width: auto;
 }
+
+/*.element_<?php echo $galleryID; ?> .image-block_<?php echo $galleryID; ?> img:before, 
+.element_<?php echo $galleryID; ?> .image-block_<?php echo $galleryID; ?> img:after
+{
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+  background: #777;
+  -webkit-box-shadow: 0 15px 10px #777;
+  -moz-box-shadow: 0 15px 10px #777;
+  box-shadow: 0 15px 10px #777;
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
+.element_<?php echo $galleryID; ?> .image-block_<?php echo $galleryID; ?> img:after
+{
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
+}*/
 
 .element_<?php echo $galleryID; ?> .image-block_<?php echo $galleryID; ?> .image-overlay {
 	position:absolute;
@@ -714,6 +740,40 @@ jQuery(document).ready(function(){
 	/*background:url('<?php echo  plugins_url( '../images/zoom.'.$paramssld["ht_view2_zoombutton_style"].'.png' , __FILE__ ); ?>') center center no-repeat;*/
 }
 
+.image-block_wrapper img{
+	position: relative;
+	width: auto;
+    box-shadow: 0 8px 6px -6px #222;
+}
+/*.image-block_wrapper:before,
+.image-block_wrapper:after{
+	z-index: -1;
+  	position: absolute;
+  	content: "";
+  	bottom: 15px;
+  	left: 10px;
+  	width: 50%;
+  	top: 80%;
+  	max-width:300px;
+  	background: #777;
+  	-webkit-box-shadow: 0 15px 10px #777;
+  	-moz-box-shadow: 0 15px 10px #777;
+  	box-shadow: 0 15px 10px #777;
+  	-webkit-transform: rotate(-3deg);
+  	-moz-transform: rotate(-3deg);
+  	-o-transform: rotate(-3deg);
+  	-ms-transform: rotate(-3deg);
+  	transform: rotate(-3deg);
+}
+.image-block_wrapper:after{
+	-webkit-transform: rotate(3deg);
+  	-moz-transform: rotate(3deg);
+  	-o-transform: rotate(3deg);
+  	-ms-transform: rotate(3deg);
+  	transform: rotate(3deg);
+  	right: 10px;
+  	left: auto;
+}*/
 .element_<?php echo $galleryID; ?> .title-block_<?php echo $galleryID; ?> {
 	display: none;
 	position:relative;
@@ -797,7 +857,13 @@ jQuery(document).ready(function(){
 }
 
 #huge_it_gallery_popup_list_<?php echo $galleryID; ?> li.pupup-element.active {
-	display:block;
+	bottom: 0;
+    display: block;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 #huge_it_gallery_popup_list_<?php echo $galleryID; ?> .heading-navigation_<?php echo $galleryID; ?> {
@@ -854,8 +920,8 @@ jQuery(document).ready(function(){
     display: inline-block;
     left: 0;
     margin: auto;
-    max-height: 380px;
-    max-width: 290px;
+    max-height: 100%;
+    max-width: 100%;
     position: absolute;
     right: 0;
     top: 0;
@@ -882,6 +948,7 @@ jQuery(document).ready(function(){
 		background:url('<?php echo  plugins_url( '../images/divider.line.png' , __FILE__ ); ?>') center top repeat-x;
 	<?php } ?>
 }
+#huge_it_gallery_popup_list_<?php echo $galleryID; ?> li.pupup-element .popup-wrapper_<?php echo $galleryID; ?> .right-block > div.description{display: none;}
 #huge_it_gallery_popup_list_<?php echo $galleryID; ?> li.pupup-element .popup-wrapper_<?php echo $galleryID; ?> .right-block > div:last-child {background:none;}
 
 
@@ -893,7 +960,7 @@ jQuery(document).ready(function(){
 	line-height:<?php echo $paramssld["ht_view2_popup_title_font_size"];?>px !important;
 	color:#<?php echo $paramssld["ht_view2_popup_title_font_color"];?>;
 }
-
+#huge_it_gallery_container_<?php echo $galleryID; ?>{height: auto !important;}
 #huge_it_gallery_popup_list_<?php echo $galleryID; ?> .popup-wrapper_<?php echo $galleryID; ?> .right-block .description {
 	clear:both;
 	position:relative;
@@ -960,27 +1027,21 @@ jQuery(document).ready(function(){
 }
 
 .pupup-element .button-block a,.pupup-element .button-block a:link,.pupup-element .button-block a:visited,
-.submit_btn {
+.submit_btn, .buttonthis {
 	border: 0;
 	position:relative;
 	display:inline-block;
 	padding:7px 12px;
-	background:#<?php echo $paramssld["ht_view2_popup_linkbutton_background_color"];?>;
-	color:#<?php echo $paramssld["ht_view2_popup_linkbutton_color"];?>;
+	background:#fc2856;
+	color:#fff;
 	font-size:<?php echo $paramssld["ht_view2_popup_linkbutton_font_size"];?>;
 	text-decoration:none;
 }
 
-.form_input{
-	display: inline-block;
-	width: 200px;
-}
-.enquire_form{background: 0 !important; display: none;}
-
 .pupup-element .button-block a:hover,.pupup-element .button-block a:focus,.pupup-element .button-block a:active,
-.submit_btn:hover, .submit_btn:focus, .submit_btn:active {
-	background:#<?php echo $paramssld["ht_view2_popup_linkbutton_background_hover_color"];?>;
-	color:#<?php echo $paramssld["ht_view2_popup_linkbutton_font_hover_color"];?>;
+.submit_btn:hover, .submit_btn:focus, .submit_btn:active, .buttonthis:focus, .buttonthis:hover {
+	background:#eb2550;
+	color:#fff;
 }
 
 
@@ -1047,10 +1108,9 @@ jQuery(document).ready(function(){
 		height:100%;
 		z-index:199;
 	}
-
 }
 </style>
-<section id="huge_it_gallery_content_<?php echo $galleryID; ?>" >
+<section id="huge_it_gallery_content_<?php echo $galleryID; ?>" class="huge_it_gallery_content">
   <div id="huge_it_gallery_container_<?php echo $galleryID; ?>" class="super-list variable-sizes clearfix">
   	<?php
 	
@@ -1061,44 +1121,46 @@ jQuery(document).ready(function(){
 		$result = substr($descnohtml, 0, 50);
 		?>
 		<div class="element_<?php echo $galleryID; ?> col-xs-12 col-sm-6 col-md-3" tabindex="0" data-symbol="<?php echo $row->name; ?>" data-category="alkaline-earth">
-			<div class="image-block_<?php echo $galleryID; ?>">
-			<?php
-					$imagerowstype=$row->sl_type;
-					if($row->sl_type == ''){$imagerowstype='image';}
-					switch($imagerowstype){
-						case 'image':
-				?>									
-							<?php $imgurl=explode(";",$row->image_url); ?>
-							<?php 	if($row->image_url != ';'){ ?>
-							<img alt="<?php echo $row->name; ?>" id="wd-cl-img<?php echo $key; ?>" src="<?php echo get_huge_image($imgurl[0],$image_prefix); ?>"  />
-							<?php } else { ?>
-							<img alt="<?php echo $row->name; ?>" id="wd-cl-img<?php echo $key; ?>" src="images/noimage.jpg"  />
-							<?php
-							} ?>
+			<div class="image-block_<?php echo $galleryID; ?>">				
+				<div class="image-block_wrapper">
+					<?php
+						$imagerowstype=$row->sl_type;
+						if($row->sl_type == ''){$imagerowstype='image';}
+						switch($imagerowstype){
+							case 'image':
+					?>									
+								<?php $imgurl=explode(";",$row->image_url); ?>
+								<?php 	if($row->image_url != ';'){ ?>
+								<img alt="<?php echo $row->name; ?>" id="wd-cl-img<?php echo $key; ?>" src="<?php echo get_huge_image($imgurl[0],$image_prefix); ?>"  />
+								<?php } else { ?>
+								<img alt="<?php echo $row->name; ?>" id="wd-cl-img<?php echo $key; ?>" src="images/noimage.jpg"  />
+								<?php
+								} ?>
 
-				<?php
-						break;
-						case 'video':
-				?>
-							<?php
-								$videourl=get_video_id_from_url($row->image_url);
-								if($videourl[1]=='youtube'){?>
-										<img alt="<?php echo $row->name; ?>" src="http://img.youtube.com/vi/<?php echo $videourl[0]; ?>/mqdefault.jpg"  />		
+					<?php
+							break;
+							case 'video':
+					?>
 								<?php
-									}else {
-									$hash = unserialize(file_get_contents("http://vimeo.com/api/v2/video/".$videourl[0].".php"));
-									$imgsrc=$hash[0]['thumbnail_large'];
+									$videourl=get_video_id_from_url($row->image_url);
+									if($videourl[1]=='youtube'){?>
+											<img alt="<?php echo $row->name; ?>" src="http://img.youtube.com/vi/<?php echo $videourl[0]; ?>/mqdefault.jpg"  />		
+									<?php
+										}else {
+										$hash = unserialize(file_get_contents("http://vimeo.com/api/v2/video/".$videourl[0].".php"));
+										$imgsrc=$hash[0]['thumbnail_large'];
+									?>
+											<img alt="<?php echo $row->name; ?>" src="<?php echo $imgsrc; ?>"  />
+									<?php
+									}
 								?>
-										<img alt="<?php echo $row->name; ?>" src="<?php echo $imgsrc; ?>"  />
-								<?php
-								}
-							?>
-				<?php
-						break;
-					}
-				?>
-			
-				<div class="image-overlay"><a href="#<?php echo $row->id; ?>"></a></div>
+					<?php
+							break;
+						}
+					?>
+				
+					<div class="image-overlay"><a href="#<?php echo $row->id; ?>"></a></div>
+				</div>
 			</div>
 			<div class="title-block_<?php echo $galleryID; ?>">
 				<?php if( $row->name != '' &&  $row->name != null) { ?>
@@ -1170,29 +1232,10 @@ jQuery(document).ready(function(){
 					<?php if($paramssld["ht_view2_show_popup_title"]=='on' && $row->name != '' &&  $row->name != null){?><h3 class="title"><?php echo $row->name; ?></h3><?php } ?>
 					<?php if($paramssld["ht_view2_show_description"]=='on'){?><div class="description"><?php echo $row->description; ?></div><?php } ?>
 					<?php if($paramssld["ht_view2_show_popup_linkbutton"]=='on'){?>
-						<!--<div class="button-block">
-						<a href="<?php //echo $link; ?>"  <?php //if ($row->link_target=="on"){echo 'target="_blank"';}?>><?php //echo $paramssld["ht_view2_popup_linkbutton_text"]; ?></a>
-						</div>-->
-						<div class="enquire_form" id="enquire_form">
-							<?php
-								$row_name	= $row->name;
-								$row_name = str_replace(" ", "_", $row_name);
-								//echo $row_name;
-							?>
-							<form method="post" action="<?php //echo plugins_url( 'send_email.php', dirname(__FILE__) ); ?>" id="enquiry_contact_form_<?php echo $row_name; ?>" name="enquiry_contact_form<?php echo $galleryID; ?>" class="enquiry_contact_form">
-								<div class="form-group">
-									<input type="hidden" name="Enquired_Product" class="Enquired_Product" id="Enquired_Product" value="<?php echo $row->name; ?>" />
-									<input type="text" name="User_Email" id="User_Email" placeholder="Enter Your Email" class="User_Email form-control form_input client_email">
-									<!-- <input type="submit" name="send_enquiry" value="SEND" class="submit_btn" /> -->
-									<input type="button" name="send_enquiry" value="SEND" class="submit_btn" onClick="submit_enquiry_script('enquiry_contact_form_<?php echo $row_name; ?>');">
-									<!-- <input type="submit" name="send_enquiry" value="SEND" class="submit_btn" onClick="submit_enquiry_script();"> -->
-								</div>
-								<div class="alert alert-success success_message_email" style="display: none">Inquiry successfully sent. We will get in touch with you soon.</div>
-								<div class="alert alert-danger error_message_email" style="display: none">Please enter valid email address</div>
-							</form>
+						<div class="button-block test">
+							<button type="button" class="buttonthis" name="<?php echo $link; ?>"><?php echo $paramssld["ht_view2_popup_linkbutton_text"]; ?></button>
+							<!-- <a href="<?php //echo $link; ?>"  <?php //if ($row->link_target=="on"){echo 'target="_blank"';}?>><?php //echo $paramssld["ht_view2_popup_linkbutton_text"]; ?></a> -->
 						</div>
-						<div class="button-block"><a href="javascript:void(0)" class="enquire_now">Enquire about this Product</a></div>
-
 					<?php } ?>
 
 
@@ -1229,8 +1272,6 @@ jQuery(document).ready(function(){
 	position:relative;
 	background:#<?php echo $paramssld["ht_view5_slider_background_color"];?>;
 }
-
-
 
 [class$="-arrow"] {
 	background-image:url(<?php echo plugins_url('../images/arrow.'.$paramssld["ht_view5_icons_style"].'.png', __FILE__);?>);
@@ -1478,12 +1519,12 @@ jQuery(document).ready(function(){
 	width: 100%;
 	max-width:<?php echo $paramssld['ht_view6_width']; ?>px;
 }
-
 .element_<?php echo $galleryID; ?> .image-block_<?php echo $galleryID; ?> a {display:block;}
 
 .element_<?php echo $galleryID; ?> .image-block_<?php echo $galleryID; ?> img {
 	width: 100%;
-	max-width:<?php echo $paramssld['ht_view6_width']; ?>px !important;
+	/*max-width:<?php echo $paramssld['ht_view6_width']; ?>px !important;*/
+	max-width: 300px;
 	height:auto;
 	display:block;
 	border-radius: 0px !important;

@@ -168,6 +168,11 @@ jQuery(function(){
     	jQuery('.enquire_now').show();
     });
 
+    jQuery('.buttonthis').click(function(){
+    	var url = jQuery(this).attr('name');
+    	window.open(url, '_blank');
+    })
+
 
 });
 

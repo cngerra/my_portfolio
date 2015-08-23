@@ -18,17 +18,25 @@ function fixedbsmenu767(){
         document.onscroll = function() {
             if( jQuery(window).scrollTop() > jQuery('header').height() ) {
                 jQuery('.header_inner').addClass('nav_logo_wrapper');
-                //jQuery('.logo').hide();
                 jQuery('.alternative_logo').show();
-                //jQuery('.logo_wrapper').css({'top':'30px'});
-            }
-            else {
+            } else {
                 jQuery('.header_inner').removeClass('nav_logo_wrapper');
-                //jQuery('.logo').show();
                 jQuery('.alternative_logo').hide();
-                //jQuery('.logo_wrapper').css({'top':'100px'});
             }
         };
+    }
+}
+
+function onLoadClick(){
+    if(jQuery(window).width() > 700){
+        //Static Top
+        if( jQuery(window).scrollTop() > jQuery('header').height() ) {
+            jQuery('.header_inner').addClass('nav_logo_wrapper');
+            jQuery('.alternative_logo').show();
+        } else {
+            jQuery('.header_inner').removeClass('nav_logo_wrapper');
+            jQuery('.alternative_logo').hide();
+        }
     }
 }
 
@@ -39,8 +47,7 @@ jQuery(document).ready(function() {
     //Static Menu
     fixedbsmenu();
     fixedbsmenu767();
-
-
+    onLoadClick();
 
     jQuery('a[href*=#]:not([href=#])').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {

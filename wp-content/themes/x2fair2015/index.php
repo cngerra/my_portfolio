@@ -42,17 +42,17 @@ get_header(); ?>
 	    <div class="homepage_menu">
 		    <ul class="home_menu display-inline list-unstyled" id="menu-main-menu">
 		    	<li class="menu-item" id="menu-item">
-		    		<a href="http://localhost/x2fair.com/works#works">
+		    		<a href="http://localhost/x2fair.com/works" name="works">
 		    			<i class="fa fa-code"></i> Works
 		    		</a>
 		    	</li>
 				<li class="menu-item" id="menu-item">
-					<a href="http://localhost/x2fair.com/works#about">
+					<a href="http://localhost/x2fair.com/works#about" name="about">
 						<i class="fa fa-user"></i> About
 					</a>
 				</li>
 				<li class="menu-item" id="menu-item">
-					<a href="http://localhost/x2fair.com/works#contact">
+					<a href="http://localhost/x2fair.com/works#contact" name="contact">
 						<i class="fa fa-envelope"></i> Contact
 					</a>
 				</li>
