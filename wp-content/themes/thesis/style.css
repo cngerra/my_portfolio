@@ -1,0 +1,16 @@
+/*
+Theme Name:	Thesis
+Theme URI:	http://diythemes.com/thesis/
+Description:	The first data-driven template system for WordPress gives you maximum performance AND control.
+Version:	2.1.9
+Author:		Chris Pearson
+Author URI:	http://www.pearsonified.com/
+Distributor:	http://diythemes.com/
+
+Copyright 2012 DIYthemes, LLC. Patent pending. All rights reserved.
+DIYthemes, Thesis, and the Thesis Theme are registered trademarks of DIYthemes, LLC.
+License: DIYthemes Software License Agreement
+License URI: http://diythemes.com/thesis/rtfm/software-license-agreement/
+*/
+
+.menu_top .current a, .menu_top .current a:hover, .menu_top .current-cat a, .menu_top .current-cat a:hover, .menu_top .current-menu-item a, .menu_top .current-menu-item a:hover { background: #364ea2 !important; }
